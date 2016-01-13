@@ -1,0 +1,31 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html" />
+<link rel="import" href="../../bower_components/paper-button/paper-button.html" />
+<link rel="import" href="../../bower_components/paper-toast/paper-toast.html" />
+<link rel="import" href="hello-world-style.html" />
+
+<dom-module id="hello-world">
+	<template>
+		<style include="hello-world-style"></style>
+		<paper-button raised 
+			class="colorful"
+			on-tap="displayToast"
+			onclick="document.querySelector('#helloWorld').show()">
+			{{text}}
+		</paper-button>
+		<paper-toast id="{{toast}}" text="Hello World!"></paper-toast>
+	</template>
+
+	<script>
+Polymer({
+	is: 'hello-world',
+	properties: {
+		text: String,
+		toast: String,
+	},
+	disaplyToast: function() {
+		document.querySelector('#' + this.toast).show();
+	},
+})();
+	</script>
+
+</dom-module>
