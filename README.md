@@ -9,3 +9,9 @@ To run:
 $> docker build --tag=polymer .
 $> docker run --rm -p 8080:8080 polymer
 ```
+
+or, simply:
+
+```sh
+$> make run
+```

@@ -29,4 +29,3 @@ add main.go /opt/hello/main.go
 run go build -o hello main.go
 
 cmd ["./hello"]
-
