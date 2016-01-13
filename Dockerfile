@@ -1,9 +1,9 @@
-from ubuntu
+from golang
 
 run apt-get update -y
 run apt-get install -y --fix-missing \
-	nodejs npm git
-run apt-get install -y nodejs-legacy
+	nodejs nodejs-legacy \
+	npm git
 
 run npm install -g bower
 
@@ -25,5 +25,7 @@ add index.html             /opt/hello/index.html
 add hello-world.html       /opt/hello/my-components/hello-world/hello-world.html
 add hello-world-style.html /opt/hello/my-components/hello-world/hello-world-style.html
 
-cmd ["python", "-m", "SimpleHTTPServer", "8000"]
+add main.go /opt/hello/main.go
+
+cmd ["go", "run", "main.go"]
 
