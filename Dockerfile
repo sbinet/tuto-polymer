@@ -26,6 +26,7 @@ add hello-world.html       /opt/hello/my-components/hello-world/hello-world.html
 add hello-world-style.html /opt/hello/my-components/hello-world/hello-world-style.html
 
 add main.go /opt/hello/main.go
+run go build -o hello main.go
 
-cmd ["go", "run", "main.go"]
+cmd ["./hello"]
 
