@@ -1,7 +1,14 @@
 package main
 
-import "net/http"
+import (
+	"flag"
+	"net/http"
+)
 
 func main() {
-	http.ListenAndServe(":8080", http.FileServer(http.Dir("./rootfs")))
+	var addr string
+	flag.StringVar(&addr, "addr", ":8080", "server addr:port")
+	flag.Parse()
+
+	http.ListenAndServe(addr, http.FileServer(http.Dir("./rootfs")))
 }
